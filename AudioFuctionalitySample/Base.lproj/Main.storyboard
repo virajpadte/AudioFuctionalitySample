@@ -25,13 +25,16 @@
                                 <rect key="frame" x="16" y="99" width="343" height="298"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SDJ-Dm-1c8">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SDJ-Dm-1c8" userLabel="VolumeSlider">
                                 <rect key="frame" x="37" y="538" width="301" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="l3r-OE-GFw">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="l3r-OE-GFw" userLabel="ScrollSlider">
                                 <rect key="frame" x="37" y="458" width="301" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slide:" destination="BYZ-38-t0r" eventType="valueChanged" id="67A-kS-REH"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfW-E5-PY4">
                                 <rect key="frame" x="158" y="436" width="58" height="21"/>
@@ -52,7 +55,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="BHq-ip-oEK">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="xfg-zR-DeM"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="xfg-zR-DeM">
+                                            <connections>
+                                                <action selector="play:" destination="BYZ-38-t0r" id="vcX-9s-hFX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -60,14 +67,25 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="pause" id="Gdy-cT-P8H"/>
+                                    <barButtonItem systemItem="pause" id="Gdy-cT-P8H">
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" id="EPR-sd-jjI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="aCl-UA-j0X"/>
-                                    <barButtonItem title="Stop" id="owr-WX-c12"/>
+                                    <barButtonItem title="Stop" id="owr-WX-c12">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="Xgh-0S-bES"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="slider" destination="l3r-OE-GFw" id="vgI-t5-Rbf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
