@@ -68,7 +68,9 @@ class ViewController: UIViewController{
     }
     
     func update(){
-        //print(Float(player.currentTime))
+        //update routine
+        let currentTime = player.currentTime
+        print("current time: \(currentTime)")
         scrollSlider.value = Float(player.currentTime)
         if player.currentTime == player.duration{
             timer.invalidate()
