@@ -14,6 +14,7 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var volSlider: UISlider!
     @IBOutlet weak var scrollSlider: UISlider!
+    @IBOutlet weak var songName: UILabel!
     
     var player = AVAudioPlayer()
     
@@ -25,12 +26,15 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        let audioPath = Bundle.main.path(forResource: "kashi", ofType: ".mp3")
+        let audioPath = Bundle.main.path(forResource: "04 Kashi Vishwanath Gange", ofType: ".mp3")
         do {
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
         } catch  {
             
         }
+        
+        //update song name:
+        songName.text = "04 Kashi Vishwanath Gange.mp3"
         
         //set scroll max to song duration
         scrollSlider.maximumValue = Float(player.duration)
@@ -69,6 +73,9 @@ class ViewController: UIViewController{
         if player.currentTime == player.duration{
             timer.invalidate()
         }
+    }
+    @IBAction func Scrolled(_ sender: Any) {
+        player.currentTime = TimeInterval(scrollSlider.value)
     }
     
     
