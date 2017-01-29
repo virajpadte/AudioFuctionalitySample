@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="BHq-ip-oEK">
+                                    <navigationItem title="SoundBurst" id="BHq-ip-oEK">
                                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="xfg-zR-DeM">
                                             <connections>
                                                 <action selector="play:" destination="BYZ-38-t0r" id="vcX-9s-hFX"/>
@@ -84,7 +84,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="slider" destination="l3r-OE-GFw" id="vgI-t5-Rbf"/>
+                        <outlet property="scrollSlider" destination="SDJ-Dm-1c8" id="UHl-Nw-hM7"/>
+                        <outlet property="volSlider" destination="l3r-OE-GFw" id="hco-HA-hcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
